@@ -53,4 +53,5 @@ coverage gate, verdict — so a human can audit every step.
 ## Evaluation as a gate
 
 `batayan eval` runs the labelled set and exits non-zero on any error, so reliability
-is enforced in CI (`.github/workflows/ci.yml`) — not just asserted in prose.
+is a **reproducible gate** — runnable locally and via the included Actions workflow
+(`.github/workflows/ci.yml`) — not just asserted in prose.

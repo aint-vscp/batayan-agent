@@ -138,7 +138,7 @@ ABSTAIN               0         0         4
 ★ denial precision  (no wrongful 'ineligible'):    100.0%
 ```
 
-`batayan eval` exits non-zero if any case is wrong, so it doubles as a **CI gate** (see `.github/workflows/ci.yml`).
+`batayan eval` exits non-zero if any case is wrong, so it doubles as a **reproducible reliability gate** — run it locally, or via the included GitHub Actions workflow (`.github/workflows/ci.yml`) when Actions is enabled on the account.
 
 ---
 
