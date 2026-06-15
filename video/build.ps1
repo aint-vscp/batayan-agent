@@ -16,13 +16,20 @@ if (-not (Test-Path "node_modules")) {
 
 if ($Ref) {
   if (-not (Test-Path $Ref)) { throw "Reference audio not found: $Ref" }
-  if ($Install) {
-    Write-Host "Installing voice-clone toolchain (this downloads several GB once)..." -ForegroundColor Cyan
+  # Voice cloning runs in an isolated venv (reuses global CUDA torch, but pins
+  # transformers<5 so coqui-tts/XTTS works without disturbing the global env).
+  $clonePy = Join-Path $HOME ".coqui-xtts\Scripts\python.exe"
+  if ($Install -or -not (Test-Path $clonePy)) {
+    Write-Host "Setting up the voice-clone toolchain (downloads several GB once)..." -ForegroundColor Cyan
+    pip install --quiet torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
     pip install --quiet coqui-tts
-    pip install --quiet torch --index-url https://download.pytorch.org/whl/cu124
+    python -m venv (Join-Path $HOME ".coqui-xtts") --system-site-packages
+    & $clonePy -m pip install --quiet --upgrade pip
+    & $clonePy -m pip install --quiet "transformers>=4.57,<5"
   }
-  Write-Host "Synthesizing narration in YOUR cloned voice..." -ForegroundColor Cyan
-  python $ttsScript script script.json --outdir public\audio --engine clone --ref $Ref
+  $env:COQUI_TOS_AGREED = "1"; $env:USE_TF = "0"; $env:USE_FLAX = "0"
+  Write-Host "Synthesizing narration in YOUR cloned voice (GPU)..." -ForegroundColor Cyan
+  & $clonePy $ttsScript script script.json --outdir public\audio --engine clone --ref $Ref
 } else {
   Write-Host "Synthesizing narration with the default neural voice..." -ForegroundColor Cyan
   python $ttsScript script script.json --outdir public\audio --engine edge "--rate=$Rate"
