@@ -1,0 +1,7 @@
+{
+  "name": "hr-leave",
+  "description": "Acme Corp HR leave policy (illustrative). Demonstrates that the same Batayan reasoning engine adjudicates an enterprise policy domain with no code change — only the knowledge base differs.",
+  "sources": ["leave-policy.md"],
+  "foundry_iq_knowledge_base": "acme-hr-policies",
+  "notice": "Fictional policy for demo only."
+}

@@ -1,0 +1,4 @@
+# Offline engine: no runtime dependencies (stdlib only).
+# Foundry mode (optional): install with `pip install -e .[foundry]`
+azure-ai-projects>=1.0.0 ; extra == "foundry"
+azure-identity>=1.16.0 ; extra == "foundry"

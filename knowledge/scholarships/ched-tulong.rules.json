@@ -1,0 +1,60 @@
+{
+  "program": "CHED Tulong-Dunong Grant",
+  "kb": "scholarships",
+  "decision_subject": "grant eligibility",
+  "aliases": ["CHED", "Tulong-Dunong", "tulong dunong", "CHED grant", "financial assistance grant"],
+  "rules": [
+    {
+      "id": "citizenship",
+      "description": "Applicant must be a Filipino citizen enrolled in the Philippines.",
+      "predicate": {"field": "citizenship", "op": "eq", "value": "Filipino"},
+      "decisive": true,
+      "cites": {
+        "source": "ched-tulong.md",
+        "section": "2. Citizenship",
+        "quote": "The applicant must be a Filipino citizen enrolled in the Philippines.",
+        "as_of": "2026-02-01"
+      },
+      "remediation": "This grant requires Filipino citizenship."
+    },
+    {
+      "id": "enrollment",
+      "description": "Applicant must be enrolled in a CHED-recognized higher education institution.",
+      "predicate": {"field": "enrolled_in_recognized_hei", "op": "is_true"},
+      "decisive": true,
+      "cites": {
+        "source": "ched-tulong.md",
+        "section": "3. Enrollment",
+        "quote": "The applicant must be currently enrolled in a CHED-recognized higher education institution.",
+        "as_of": "2026-02-01"
+      },
+      "remediation": "Enroll in a CHED-recognized institution and provide proof of enrollment."
+    },
+    {
+      "id": "financial_need",
+      "description": "Annual household income must not exceed PHP 700,000.",
+      "predicate": {"field": "household_income_annual", "op": "lte", "value": 700000},
+      "decisive": true,
+      "cites": {
+        "source": "ched-tulong.md",
+        "section": "4. Financial Need",
+        "quote": "The applicant's total annual household income must not exceed PHP 700,000.",
+        "as_of": "2026-02-01"
+      },
+      "remediation": "Household income exceeds the PHP 700,000 cap for this grant."
+    },
+    {
+      "id": "academic_standing",
+      "description": "Applicant must have a GWA of at least 80/100.",
+      "predicate": {"field": "gwa", "op": "gte", "value": 80},
+      "decisive": true,
+      "cites": {
+        "source": "ched-tulong.md",
+        "section": "5. Academic Standing",
+        "quote": "The applicant must maintain a General Weighted Average (GWA) of at least 80 out of",
+        "as_of": "2026-02-01"
+      },
+      "remediation": "Raise GWA to at least 80 and clear any failing grade."
+    }
+  ]
+}

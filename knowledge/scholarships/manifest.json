@@ -1,0 +1,7 @@
+{
+  "name": "scholarships",
+  "description": "Philippine student scholarship & grant eligibility rulebooks (illustrative). Demonstrates Batayan reasoning over conflicting, multi-constraint eligibility rules across multiple programs.",
+  "sources": ["dost-sei.md", "ched-tulong.md"],
+  "foundry_iq_knowledge_base": "batayan-scholarships",
+  "notice": "Illustrative thresholds for demo only — not official scholarship criteria."
+}

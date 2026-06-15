@@ -1,0 +1,60 @@
+{
+  "program": "Acme Corp Paid Parental Leave",
+  "kb": "hr-leave",
+  "decision_subject": "parental leave eligibility",
+  "aliases": ["parental leave", "paid leave", "leave", "acme leave"],
+  "rules": [
+    {
+      "id": "employment_status",
+      "description": "Employee must be a regular (permanent) employee.",
+      "predicate": {"field": "employment_status", "op": "eq", "value": "regular"},
+      "decisive": true,
+      "cites": {
+        "source": "leave-policy.md",
+        "section": "2. Employment Status",
+        "quote": "The employee must be a regular (permanent) employee.",
+        "as_of": "2026-03-01"
+      },
+      "remediation": "Paid parental leave is limited to regular employees under this policy."
+    },
+    {
+      "id": "length_of_service",
+      "description": "Employee must have at least 12 months of continuous service.",
+      "predicate": {"field": "months_tenure", "op": "gte", "value": 12},
+      "decisive": true,
+      "cites": {
+        "source": "leave-policy.md",
+        "section": "3. Length of Service",
+        "quote": "The employee must have completed at least 12 months of continuous service with Acme",
+        "as_of": "2026-03-01"
+      },
+      "remediation": "Reach 12 months of continuous service before the intended leave start date."
+    },
+    {
+      "id": "primary_caregiver",
+      "description": "Employee must be a primary caregiver for the child.",
+      "predicate": {"field": "is_primary_caregiver", "op": "is_true"},
+      "decisive": true,
+      "cites": {
+        "source": "leave-policy.md",
+        "section": "4. Caregiver Role",
+        "quote": "The employee must be a primary caregiver for the child for whom leave is requested.",
+        "as_of": "2026-03-01"
+      },
+      "remediation": "Only the designated primary caregiver may claim this paid benefit."
+    },
+    {
+      "id": "advance_notice",
+      "description": "Request must be filed at least 30 days before the start date.",
+      "predicate": {"field": "notice_days_given", "op": "gte", "value": 30},
+      "decisive": true,
+      "cites": {
+        "source": "leave-policy.md",
+        "section": "5. Advance Notice",
+        "quote": "The employee must file the leave request at least 30 days before the intended start",
+        "as_of": "2026-03-01"
+      },
+      "remediation": "File at least 30 days in advance, or provide physician-documented medical emergency."
+    }
+  ]
+}

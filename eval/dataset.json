@@ -1,0 +1,65 @@
+{
+  "description": "Labelled evaluation set for Batayan. Covers all three verdict classes across two knowledge bases. Ground truth is unarguable because the rulebooks are self-authored (see knowledge/).",
+  "cases": [
+    {
+      "name": "Liza Mendoza", "program": "DOST-SEI", "expected": "ELIGIBLE",
+      "profile": {"name": "Liza Mendoza", "citizenship": "Filipino", "gwa": 92, "household_income_annual": 350000, "course": "BS Computer Science", "year_level": 1, "holds_other_government_scholarship": false}
+    },
+    {
+      "name": "Hanna Lim (boundary)", "program": "DOST-SEI", "expected": "ELIGIBLE",
+      "profile": {"name": "Hanna Lim", "citizenship": "Filipino", "gwa": 90, "household_income_annual": 400000, "course": "BS Mathematics", "year_level": 1, "holds_other_government_scholarship": false}
+    },
+    {
+      "name": "Mateo Reyes (income)", "program": "DOST-SEI", "expected": "INELIGIBLE",
+      "profile": {"name": "Mateo Reyes", "citizenship": "Filipino", "gwa": 91, "household_income_annual": 650000, "course": "BS Information Technology", "year_level": 1, "holds_other_government_scholarship": false}
+    },
+    {
+      "name": "Carlo Uy (gwa)", "program": "DOST-SEI", "expected": "INELIGIBLE",
+      "profile": {"name": "Carlo Uy", "citizenship": "Filipino", "gwa": 85, "household_income_annual": 300000, "course": "BS Computer Science", "year_level": 1, "holds_other_government_scholarship": false}
+    },
+    {
+      "name": "Dina Cruz (course)", "program": "DOST-SEI", "expected": "INELIGIBLE",
+      "profile": {"name": "Dina Cruz", "citizenship": "Filipino", "gwa": 92, "household_income_annual": 200000, "course": "BS Nursing", "year_level": 1, "holds_other_government_scholarship": false}
+    },
+    {
+      "name": "Erik Santos (year level)", "program": "DOST-SEI", "expected": "INELIGIBLE",
+      "profile": {"name": "Erik Santos", "citizenship": "Filipino", "gwa": 95, "household_income_annual": 250000, "course": "BS Physics", "year_level": 2, "holds_other_government_scholarship": false}
+    },
+    {
+      "name": "Faye Lopez (concurrent)", "program": "DOST-SEI", "expected": "INELIGIBLE",
+      "profile": {"name": "Faye Lopez", "citizenship": "Filipino", "gwa": 94, "household_income_annual": 180000, "course": "BS Chemistry", "year_level": 1, "holds_other_government_scholarship": true}
+    },
+    {
+      "name": "Aisha Tan (missing income)", "program": "DOST-SEI", "expected": "INSUFFICIENT_EVIDENCE",
+      "profile": {"name": "Aisha Tan", "citizenship": "Filipino", "gwa": 95, "course": "BS Biology", "year_level": 1, "holds_other_government_scholarship": false}
+    },
+    {
+      "name": "Gabe Ong (missing citizenship)", "program": "DOST-SEI", "expected": "INSUFFICIENT_EVIDENCE",
+      "profile": {"name": "Gabe Ong", "gwa": 93, "household_income_annual": 300000, "course": "BS Computer Science", "year_level": 1, "holds_other_government_scholarship": false}
+    },
+    {
+      "name": "Mateo Reyes (referral)", "program": "CHED Tulong", "expected": "ELIGIBLE",
+      "profile": {"name": "Mateo Reyes", "citizenship": "Filipino", "gwa": 91, "household_income_annual": 650000, "course": "BS Information Technology", "enrolled_in_recognized_hei": true}
+    },
+    {
+      "name": "Ivan Cho (income)", "program": "CHED Tulong", "expected": "INELIGIBLE",
+      "profile": {"name": "Ivan Cho", "citizenship": "Filipino", "gwa": 85, "household_income_annual": 800000, "enrolled_in_recognized_hei": true}
+    },
+    {
+      "name": "Jen Aquino (missing enrollment)", "program": "CHED Tulong", "expected": "INSUFFICIENT_EVIDENCE",
+      "profile": {"name": "Jen Aquino", "citizenship": "Filipino", "gwa": 88, "household_income_annual": 300000}
+    },
+    {
+      "name": "Ramon dela Cruz", "program": "parental leave", "expected": "ELIGIBLE",
+      "profile": {"name": "Ramon dela Cruz", "employment_status": "regular", "months_tenure": 18, "is_primary_caregiver": true, "notice_days_given": 45}
+    },
+    {
+      "name": "Kim Bautista (tenure)", "program": "parental leave", "expected": "INELIGIBLE",
+      "profile": {"name": "Kim Bautista", "employment_status": "regular", "months_tenure": 6, "is_primary_caregiver": true, "notice_days_given": 40}
+    },
+    {
+      "name": "Lara Vega (missing caregiver)", "program": "parental leave", "expected": "INSUFFICIENT_EVIDENCE",
+      "profile": {"name": "Lara Vega", "employment_status": "regular", "months_tenure": 24, "notice_days_given": 60}
+    }
+  ]
+}

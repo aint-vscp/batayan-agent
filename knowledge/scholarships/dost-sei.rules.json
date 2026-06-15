@@ -1,0 +1,94 @@
+{
+  "program": "DOST-SEI Undergraduate S&T Scholarship",
+  "kb": "scholarships",
+  "decision_subject": "scholarship eligibility",
+  "aliases": ["DOST", "DOST-SEI", "S&T scholarship", "science and technology scholarship"],
+  "rules": [
+    {
+      "id": "citizenship",
+      "description": "Applicant must be a natural-born Filipino citizen.",
+      "predicate": {"field": "citizenship", "op": "eq", "value": "Filipino"},
+      "decisive": true,
+      "cites": {
+        "source": "dost-sei.md",
+        "section": "2. Citizenship and Residency",
+        "quote": "The applicant must be a natural-born Filipino citizen.",
+        "as_of": "2026-01-15"
+      },
+      "remediation": "This scholarship requires natural-born Filipino citizenship."
+    },
+    {
+      "id": "academic_merit",
+      "description": "Applicant must have a General Weighted Average of at least 90/100.",
+      "predicate": {"field": "gwa", "op": "gte", "value": 90},
+      "decisive": true,
+      "cites": {
+        "source": "dost-sei.md",
+        "section": "3. Academic Merit",
+        "quote": "The applicant must have a General Weighted Average (GWA) of at least 90 out of 100",
+        "as_of": "2026-01-15"
+      },
+      "remediation": "Raise GWA to at least 90, or apply to a program with a lower academic cutoff."
+    },
+    {
+      "id": "financial_need",
+      "description": "Annual household income must not exceed PHP 400,000.",
+      "predicate": {"field": "household_income_annual", "op": "lte", "value": 400000},
+      "decisive": true,
+      "cites": {
+        "source": "dost-sei.md",
+        "section": "4. Financial Need",
+        "quote": "The applicant's total annual household income must not exceed PHP 400,000.",
+        "as_of": "2026-01-15"
+      },
+      "remediation": "Household income is above the PHP 400,000 cap. If income was misreported, file a corrected income statement; otherwise consider a merit-only scholarship without an income cap."
+    },
+    {
+      "id": "priority_course",
+      "description": "Applicant must be enrolled in a priority S&T degree program.",
+      "predicate": {
+        "field": "course",
+        "op": "in",
+        "value": [
+          "BS Computer Science", "BS Information Technology", "BS Civil Engineering",
+          "BS Electronics Engineering", "BS Biology", "BS Chemistry",
+          "BS Mathematics", "BS Physics"
+        ]
+      },
+      "decisive": true,
+      "cites": {
+        "source": "dost-sei.md",
+        "section": "5. Priority Degree Programs",
+        "quote": "The applicant must be enrolled in, or admitted to, one of the priority S&T degree programs",
+        "as_of": "2026-01-15"
+      },
+      "remediation": "Enroll in one of the listed priority S&T degree programs to qualify."
+    },
+    {
+      "id": "year_level",
+      "description": "Award is for incoming first-year (year level 1) students.",
+      "predicate": {"field": "year_level", "op": "lte", "value": 1},
+      "decisive": true,
+      "cites": {
+        "source": "dost-sei.md",
+        "section": "6. Year Level",
+        "quote": "The scholarship is awarded to incoming first-year (year level 1) college students.",
+        "as_of": "2026-01-15"
+      },
+      "remediation": "This award begins only for incoming first-year students; upperclassmen are not eligible to start it."
+    },
+    {
+      "id": "no_concurrent_scholarship",
+      "description": "Applicant must not hold another government-funded scholarship.",
+      "predicate": {"field": "holds_other_government_scholarship", "op": "is_false"},
+      "decisive": true,
+      "cites": {
+        "source": "dost-sei.md",
+        "section": "7. No Concurrent Government Scholarship",
+        "quote": "The applicant must not be holding any other government-funded scholarship at the same time.",
+        "as_of": "2026-01-15"
+      },
+      "remediation": "Relinquish the other government scholarship, or choose between the two — they cannot be held concurrently."
+    }
+  ]
+}

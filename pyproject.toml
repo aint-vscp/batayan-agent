@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "batayan-agent"
+version = "0.1.0"
+description = "Batayan — a grounded, multi-step eligibility-reasoning agent on Microsoft Foundry + Foundry IQ. AI that argues with receipts."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Vash Puno" }]
+keywords = ["ai", "agents", "reasoning", "microsoft-foundry", "foundry-iq", "rag", "grounding", "citations", "eligibility"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Intended Audience :: Developers",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+# The offline reasoning engine has ZERO runtime dependencies — it runs anywhere
+# Python 3.10+ is available, which is what makes the on-stage demo reliable.
+dependencies = []
+
+[project.optional-dependencies]
+# Foundry mode: the env-gated Foundry Agent Service + Foundry IQ integration.
+foundry = ["azure-ai-projects>=1.0.0", "azure-identity>=1.16.0"]
+dev = ["pytest>=7.4"]
+
+[project.scripts]
+batayan = "batayan.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/aint-vscp/batayan-agent"
+Repository = "https://github.com/aint-vscp/batayan-agent"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+batayan = ["py.typed"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
