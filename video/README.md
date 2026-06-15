@@ -14,24 +14,40 @@ build.ps1              # one command: narrate -> render
 
 ## One command
 
+The **best fidelity** is to read each beat yourself (it's literally your voice),
+which *also* builds a reusable cloned voice profile for future scripts:
+
 ```powershell
-# YOUR cloned voice, from a raw recording (m4a/wav/mp3) — does EVERYTHING:
-# prep reference -> set up clone toolchain (first run) -> synth -> render -> publish
-./build.ps1 -Recording "C:\Users\Vash\Documents\Sound Recordings\Recording.m4a"
+# 1) Record one clip per beat into a folder, named:
+#    Intro.m4a · Beat 1.m4a · Beat 2.m4a · Beat 3.m4a · Outro.m4a
+#    (read the lines in voice/recording-script.md)
 
-# or auto-pick the newest file in Documents\Sound Recordings
-./build.ps1 -Recording auto
-
-# reuse an existing voice\reference.wav (or default voice if none)
-./build.ps1
-
-# force the default free neural voice (no cloning)
-./build.ps1 -Default
+# 2) Build with your REAL voice + auto-build the reusable "vash" clone profile:
+./build.ps1 -Takes "C:\Users\Vash\Documents\Sound Recordings"
 ```
 
-Output: `out/batayan-demo.mp4` (1920×1080, H.264 + AAC) and a copy published to the
+Other modes:
+
+```powershell
+# Reuse your cloned voice on ANY future/edited script (no re-recording):
+./build.ps1 -Profile vash
+
+# Clone from a single raw recording:
+./build.ps1 -Recording "C:\path\Recording.m4a"      # or:  -Recording auto
+
+# Default free neural voice (no GPU, no recording):
+./build.ps1 -Default                                 # or just ./build.ps1
+```
+
+Output: `out/batayan-demo.mp4` (1920×1080, H.264 + AAC) plus a copy published to the
 submission folder. The clone toolchain installs itself on first use (isolated venv,
 reuses your global CUDA PyTorch).
+
+### Reuse your voice on any hackathon
+- `-Takes` saves cleaned reference clips to `~/.copilot/skills/tts/voices/vash/`.
+- For a different project, copy this `video/` folder, edit `script.json`, and run
+  `./build.ps1 -Profile vash` — every new line renders in your cloned voice.
+- Build other profiles by recording into a folder and running `-Takes ... -ProfileName <name>`.
 
 ## How it works
 
