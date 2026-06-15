@@ -15,16 +15,23 @@ build.ps1              # one command: narrate -> render
 ## One command
 
 ```powershell
-# default free neural voice (en-US-GuyNeural)
+# YOUR cloned voice, from a raw recording (m4a/wav/mp3) — does EVERYTHING:
+# prep reference -> set up clone toolchain (first run) -> synth -> render -> publish
+./build.ps1 -Recording "C:\Users\Vash\Documents\Sound Recordings\Recording.m4a"
+
+# or auto-pick the newest file in Documents\Sound Recordings
+./build.ps1 -Recording auto
+
+# reuse an existing voice\reference.wav (or default voice if none)
 ./build.ps1
 
-# in YOUR cloned voice (first run installs the clone toolchain + downloads the model)
-./build.ps1 -Ref voice\reference.wav -Install
-# after the first time:
-./build.ps1 -Ref voice\reference.wav
+# force the default free neural voice (no cloning)
+./build.ps1 -Default
 ```
 
-Output: `out/batayan-demo.mp4` (1920×1080, H.264 + AAC, ~60 s).
+Output: `out/batayan-demo.mp4` (1920×1080, H.264 + AAC) and a copy published to the
+submission folder. The clone toolchain installs itself on first use (isolated venv,
+reuses your global CUDA PyTorch).
 
 ## How it works
 
