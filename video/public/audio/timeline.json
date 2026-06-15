@@ -1,0 +1,48 @@
+{
+  "fps": 30,
+  "engine": "edge",
+  "voice": "en-US-GuyNeural",
+  "segments": [
+    {
+      "id": "intro",
+      "text": "Ever been told you don't qualify for something, and never told why? Meet Batayan: a reasoning agent that decides what you're entitled to, and proves it. Built on Microsoft Foundry, with Foundry I-Q.",
+      "file": "audio/intro.mp3",
+      "duration": 13.848,
+      "frames": 415,
+      "caption": "Batayan — AI that argues with receipts"
+    },
+    {
+      "id": "beat1",
+      "text": "Watch it reason. Liza asks if she qualifies for a scholarship. Batayan breaks the question into six atomic rules, and cites a receipt for each one. Verdict: eligible, and proven.",
+      "file": "audio/beat1.mp3",
+      "duration": 14.52,
+      "frames": 436,
+      "caption": "Beat 1 — Yes, with receipts"
+    },
+    {
+      "id": "beat2",
+      "text": "Mateo fails just one rule, the income cap. Batayan shows the receipt, the single fix, and refers him to a grant he does qualify for.",
+      "file": "audio/beat2.mp3",
+      "duration": 9.792,
+      "frames": 294,
+      "caption": "Beat 2 — No, because of one rule (+ referral)"
+    },
+    {
+      "id": "beat3",
+      "text": "And Aisha left out her income. Batayan refuses to guess. It abstains, and tells her exactly what's missing. That refusal is the product.",
+      "file": "audio/beat3.mp3",
+      "duration": 12.048,
+      "frames": 361,
+      "caption": "Beat 3 — It abstains, never bluffs"
+    },
+    {
+      "id": "outro",
+      "text": "It shows its work, and never bluffs. Batayan: because every answer deserves a basis.",
+      "file": "audio/outro.mp3",
+      "duration": 6.96,
+      "frames": 209,
+      "caption": "Because every answer deserves a basis."
+    }
+  ],
+  "total_seconds": 57.168
+}

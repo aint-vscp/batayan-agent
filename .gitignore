@@ -24,3 +24,8 @@ htmlcov/
 Thumbs.db
 .vscode/
 .idea/
+
+# Node / Remotion (video/)
+node_modules/
+video/out/
+video/.cache/

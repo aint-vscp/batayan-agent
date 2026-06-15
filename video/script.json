@@ -1,0 +1,30 @@
+{
+  "fps": 30,
+  "segments": [
+    {
+      "id": "intro",
+      "text": "Ever been told you don't qualify for something, and never told why? Meet Batayan: a reasoning agent that decides what you're entitled to, and proves it. Built on Microsoft Foundry, with Foundry I-Q.",
+      "caption": "Batayan — AI that argues with receipts"
+    },
+    {
+      "id": "beat1",
+      "text": "Watch it reason. Liza asks if she qualifies for a scholarship. Batayan breaks the question into six atomic rules, and cites a receipt for each one. Verdict: eligible, and proven.",
+      "caption": "Beat 1 — Yes, with receipts"
+    },
+    {
+      "id": "beat2",
+      "text": "Mateo fails just one rule, the income cap. Batayan shows the receipt, the single fix, and refers him to a grant he does qualify for.",
+      "caption": "Beat 2 — No, because of one rule (+ referral)"
+    },
+    {
+      "id": "beat3",
+      "text": "And Aisha left out her income. Batayan refuses to guess. It abstains, and tells her exactly what's missing. That refusal is the product.",
+      "caption": "Beat 3 — It abstains, never bluffs"
+    },
+    {
+      "id": "outro",
+      "text": "It shows its work, and never bluffs. Batayan: because every answer deserves a basis.",
+      "caption": "Because every answer deserves a basis."
+    }
+  ]
+}
