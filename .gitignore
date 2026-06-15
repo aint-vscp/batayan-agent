@@ -25,12 +25,9 @@ Thumbs.db
 .vscode/
 .idea/
 
-# Node / Remotion (video/)
+# Node modules
 node_modules/
-video/out/
-video/.cache/
 
-# Personal voice recordings — never commit a voice likeness to the public repo
-video/voice/*.wav
-video/voice/*.m4a
-video/voice/*.mp3
+# Remotion video project is intentionally NOT tracked in git.
+# Only its rendered output is committed (docs/batayan-demo.mp4).
+video/

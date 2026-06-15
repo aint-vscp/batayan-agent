@@ -8,6 +8,8 @@
 [![IQ](https://img.shields.io/badge/Microsoft%20IQ-Foundry%20IQ-0078d4)](#-how-it-works-microsoft-foundry--foundry-iq)
 [![license](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
+🎥 **Demo video:** [`docs/batayan-demo.mp4`](docs/batayan-demo.mp4) — a ~90-second narrated walkthrough of the three reasoning beats.
+
 **Batayan** *(Filipino: basis, grounds, foundation)* is a submission for the **Microsoft Agents League Hackathon — Reasoning Agents track**. It turns an eligibility question into a transparent, multi-step argument: it **decomposes** the question into atomic rules, **retrieves a citation for each rule** from a Foundry IQ knowledge base, **reasons** over the whole set of constraints, and returns a verdict that is either **proven** or **honestly abstained** — never guessed.
 
 ```
